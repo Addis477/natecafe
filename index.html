@@ -2,48 +2,794 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nate Café & Restaurant | Premium Dining in Addis Ababa</title>
-    <meta name="description" content="Experience premium dining in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments at Nate Café & Restaurant. 150+ menu items.">
-    <meta name="keywords" content="cafe addis ababa, restaurant ethiopia, nate cafe, premium dining, ethiopian coffee">
-    <meta name="author" content="Nate Café">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nate Café & Restaurant | Premium Dining Addis Ababa</title>
+    <meta name="description" content="Experience premium dining in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments at Nate Café & Restaurant.">
+    <meta name="keywords" content="cafe addis ababa, restaurant ethiopia, nate cafe, premium dining">
     
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Nate Café & Restaurant">
-    <meta property="og:description" content="Premium dining experience in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments.">
+    <meta property="og:description" content="Premium dining experience in Addis Ababa">
     <meta property="og:type" content="restaurant">
-    <meta property="og:image" content="https://placehold.co/1200x630/0a2f1f/d4a373?text=Nate+Cafe">
+    <meta property="og:image" content="https://placehold.co/1200x630/2D8A4E/C9A96E?text=Nate+Cafe">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E☕%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' fill='%23C9A96E'%3E☕%3C/text%3E%3C/svg%3E">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
-        /* Additional inline styles for smooth loading */
+        /* ============ YOUR EXACT COLOR SYSTEM ============ */
+        :root {
+            --green: #2D8A4E;
+            --green-dark: #1B6B34;
+            --green-light: #4CAF6E;
+            --green-bg: #0A1F12;
+            --green-card: #0F2D1A;
+            --green-surface: #0A2A16;
+            --gold: #C9A96E;
+            --gold-dark: #B8933F;
+            --gold-light: #E8D5A3;
+            --white: #FFFFFF;
+            --gray: #8FA89A;
+            --gray-light: #B8D4C2;
+            --radius-sm: 8px;
+            --radius: 16px;
+            --radius-lg: 24px;
+            --radius-xl: 32px;
+            --shadow: 0 4px 20px rgba(0,0,0,0.4);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.6);
+            --shadow-green: 0 8px 25px rgba(45,138,78,0.3);
+            --shadow-gold: 0 8px 25px rgba(201,169,110,0.25);
+            --transition: 0.3s cubic-bezier(0.4,0,0.2,1);
+            --transition-slow: 0.5s cubic-bezier(0.4,0,0.2,1);
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
         body {
+            font-family: 'Inter', sans-serif;
+            background: var(--green-bg);
+            color: #E8F5EC;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* ============ TYPOGRAPHY ============ */
+        h1, h2, h3, .logo, .section-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .section-title span { color: var(--gold); }
+        
+        /* ============ ANIMATIONS ============ */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes goldPulse {
+            0%, 100% { text-shadow: 0 0 10px rgba(201,169,110,0.3); }
+            50% { text-shadow: 0 0 25px rgba(201,169,110,0.6); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        @keyframes borderGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(201,169,110,0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(201,169,110,0); }
+        }
+        
+        .animate-on-scroll {
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transform: translateY(40px);
+            transition: all 0.7s ease;
         }
-        body.loaded {
+        
+        .animate-on-scroll.animated {
             opacity: 1;
+            transform: translateY(0);
         }
+        
+        /* ============ BUTTONS ============ */
+        .btn {
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--green);
+            color: #fff;
+            box-shadow: var(--shadow-green);
+        }
+        
+        .btn-primary:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+            color: var(--green-bg);
+            box-shadow: var(--shadow-gold);
+            font-weight: 700;
+        }
+        
+        .btn-gold:hover {
+            background: var(--gold-dark);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--green-bg);
+            transform: translateY(-3px);
+        }
+        
+        /* ============ NAVIGATION ============ */
+        .navbar {
+            background: rgba(10,31,18,0.97);
+            backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(45,138,78,0.3);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .logo-text {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-suffix {
+            font-size: 0.7rem;
+            color: var(--gray);
+            font-weight: normal;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 500;
+            color: var(--gray-light);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+            padding: 6px 0;
+        }
+        
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--gold);
+        }
+        
+        .nav-cta {
+            background: var(--green);
+            color: #fff !important;
+            padding: 10px 22px !important;
+            border-radius: 50px !important;
+        }
+        
+        .nav-cta::after {
+            display: none !important;
+        }
+        
+        .nav-cta:hover {
+            background: var(--green-dark);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--gold);
+        }
+        
+        /* ============ HERO SECTION ============ */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0A1F12 0%, #0F2D1A 50%, #0A1F12 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(45,138,78,0.15) 0%, transparent 70%);
+        }
+        
+        .hero-bg-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 160px 24px 100px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 8px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            animation: borderGlow 2s infinite;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            letter-spacing: 8px;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            animation: goldPulse 3s ease-in-out infinite;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray-light);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+            letter-spacing: 1px;
+        }
+        
+        /* ============ SECTIONS ============ */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-alt {
+            background: var(--green-surface);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+        
+        .section-label {
+            font-size: 0.78rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .section-header h2 span {
+            color: var(--gold);
+        }
+        
+        .section-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--green), var(--gold));
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+        
+        .section-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+        
+        /* ============ FEATURE CARDS ============ */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: var(--green-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(45,138,78,0.2);
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+        }
+        
+        .feature-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(16px);
+            background: rgba(15,45,26,0.85);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: #fff;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        /* ============ SIGNATURE DISHES ============ */
+        .signature-section {
+            background: var(--green-surface);
+            padding: 80px 0;
+        }
+        
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .signature-card {
+            background: var(--green-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid rgba(45,138,78,0.2);
+            cursor: pointer;
+        }
+        
+        .signature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .signature-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+        }
+        
+        .signature-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .signature-card:hover .signature-image img {
+            transform: scale(1.08);
+        }
+        
+        .signature-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--gold);
+            color: var(--green-bg);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .signature-content {
+            padding: 1.5rem;
+        }
+        
+        .signature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.75rem;
+        }
+        
+        .signature-header h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .signature-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .signature-description {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .signature-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .signature-tag {
+            background: rgba(45,138,78,0.15);
+            padding: 3px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: var(--gold-light);
+        }
+        
+        /* ============ CTA SECTION ============ */
+        .cta-section {
+            background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shimmer 6s linear infinite;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* ============ FOOTER ============ */
+        .footer {
+            background: #051A0D;
+            color: var(--gray);
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(45,138,78,0.2);
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .footer-col h4 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 16px;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .footer-col p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-col a {
+            display: block;
+            color: var(--gray);
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-col a:hover {
+            color: var(--gold);
+            padding-left: 4px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(45,138,78,0.2);
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        /* ============ RESPONSIVE ============ */
+        @media (max-width: 1024px) {
+            .features-grid, .signature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 0 1rem; }
+            .section-title { font-size: 1.8rem; }
+            .section-header h2 { font-size: 1.8rem; }
+            .hero-content { padding: 120px 1rem 80px; }
+            .hero h1 { font-size: 2.5rem; letter-spacing: 4px; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-stats { gap: 2rem; }
+            .section { padding: 50px 0; }
+            .features-grid, .signature-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .social-links { justify-content: center; }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--green-bg);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transition: right 0.4s ease;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.5);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2rem; letter-spacing: 2px; }
+            .section-title { font-size: 1.5rem; }
+            .section-header h2 { font-size: 1.5rem; }
+            .stat-number { font-size: 1.2rem; }
+        }
+        
+        .text-center { text-align: center; }
+        .mt-4 { margin-top: 2rem; }
     </style>
 </head>
 <body>
 
-    <!-- ===== NAVIGATION BAR ===== -->
+    <!-- ===== NAVIGATION ===== -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-icon">☕</span>
                 <span class="logo-text">NATE</span>
                 <span class="logo-suffix">Café & Restaurant</span>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
-            <ul class="nav-menu">
+            </a>
+            <button class="mobile-menu-btn" id="menuBtn">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
@@ -51,110 +797,68 @@
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="events.html">Events</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="reservation.html" class="nav-cta">Reserve</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION with SVG Background ===== -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
-        <!-- SVG Background Pattern -->
-        <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
-            <defs>
-                <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="1.5" fill="rgba(212,163,115,0.15)"/>
-                </pattern>
-                <pattern id="coffee-beans" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                    <text x="5" y="15" font-size="12" fill="rgba(212,163,115,0.08)">☕</text>
-                    <text x="45" y="55" font-size="10" fill="rgba(212,163,115,0.06)">☕</text>
-                </pattern>
-                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#051a0f;stop-opacity:1" />
-                    <stop offset="50%" style="stop-color:#0a2f1f;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#1a4a2a;stop-opacity:1" />
-                </linearGradient>
-            </defs>
-            <rect width="1440" height="800" fill="url(#heroGrad)"/>
-            <rect width="1440" height="800" fill="url(#dots)"/>
-            <rect width="1440" height="800" fill="url(#coffee-beans)"/>
-        </svg>
-        
-        <div class="hero-overlay"></div>
-        
+        <div class="hero-bg-pattern"></div>
         <div class="hero-content">
-            <div class="hero-badge">✦ Premium Dining ✦</div>
-            <h1 class="hero-title">NATE</h1>
+            <div class="hero-badge">✦ Premium Dining Since 2010 ✦</div>
+            <h1>NATE</h1>
             <p class="hero-subtitle">Café & Restaurant</p>
             <p class="hero-description">Where every meal is a celebration of flavor — premium dining, fresh ingredients, and unforgettable moments in Addis Ababa</p>
-            
             <div class="hero-buttons">
-                <a href="menu.html" class="btn-primary">Explore Menu →</a>
-                <a href="contact.html" class="btn-secondary">Reserve Table</a>
+                <a href="menu.html" class="btn btn-primary">Explore Menu <i class="fas fa-arrow-right"></i></a>
+                <a href="reservation.html" class="btn btn-gold">Reserve Table <i class="fas fa-calendar-check"></i></a>
             </div>
-            
             <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">7AM - 11PM</span>
-                    <span class="stat-label">Open Daily</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">✦ 4.8 ✦</span>
-                    <span class="stat-label">Customer Rating</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">150+</span>
-                    <span class="stat-label">Menu Items</span>
-                </div>
+                <div class="stat"><span class="stat-number">7AM - 11PM</span><span class="stat-label">Open Daily</span></div>
+                <div class="stat"><span class="stat-number">✦ 4.9 ✦</span><span class="stat-label">Guest Rating</span></div>
+                <div class="stat"><span class="stat-number">150+</span><span class="stat-label">Menu Items</span></div>
             </div>
         </div>
-        
-        <!-- Bottom Wave SVG -->
-        <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 1;">
-            <path fill="#faf9f6" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,85.3C384,85,480,75,576,69.3C672,64,768,64,864,69.3C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
-        </svg>
     </section>
 
     <!-- ===== FEATURES SECTION ===== -->
-    <section class="features">
+    <section class="section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Why Choose Us</span>
-                <h2>The Nate Experience</h2>
+                <div class="section-label">Why Choose Us</div>
+                <h2>The <span>Nate</span> Experience</h2>
+                <div class="section-line"></div>
                 <p>Discover what makes dining at Nate Café truly special</p>
             </div>
-            
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🍽️</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-utensils"></i></div>
                     <h3>Exceptional Cuisine</h3>
                     <p>From traditional Ethiopian dishes to international favorites, every plate is crafted with passion and the freshest ingredients.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">☕</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-mug-hot"></i></div>
                     <h3>Artisan Coffee</h3>
                     <p>Expertly brewed Ethiopian coffee — from classic macchiatos to specialty lattes made with love and precision.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🍹</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-cocktail"></i></div>
                     <h3>Signature Mocktails</h3>
                     <p>Refreshing, handcrafted alcohol-free cocktails that elevate any meal or celebration.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎉</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-calendar-alt"></i></div>
                     <h3>Event Hosting</h3>
                     <p>Birthdays, anniversaries, corporate gatherings — let us make your special moments unforgettable.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🚚</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
                     <h3>Delivery Available</h3>
                     <p>Enjoy Nate Café from the comfort of your home. Fast and reliable delivery across Addis Ababa.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">❤️</div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
                     <h3>Made with Love</h3>
                     <p>Every dish, every drink, every moment at Nate is infused with care and Ethiopian hospitality.</p>
                 </div>
@@ -163,37 +867,87 @@
     </section>
 
     <!-- ===== SIGNATURE DISHES SECTION ===== -->
-    <section class="signature-dishes">
+    <section class="signature-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-badge">Our Menu</span>
-                <h2>Signature Dishes</h2>
-                <p>Explore our most popular creations</p>
+                <div class="section-label">Our Signature Collection</div>
+                <h2>Signature <span>Dishes</span></h2>
+                <div class="section-line"></div>
+                <p>Chef's selection of our most celebrated creations</p>
             </div>
-            
-            <div id="featured-menu" class="dishes-grid">
-                <div class="loading-spinner">
-                    <div style="display: inline-block; width: 40px; height: 40px; border: 3px solid #d4a373; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-                    <p style="margin-top: 1rem;">Loading delicious dishes...</p>
+            <div class="signature-grid">
+                <div class="signature-card animate-on-scroll">
+                    <div class="signature-image">
+                        <img src="https://placehold.co/600x450/2D8A4E/C9A96E?text=Ethiopian+Tibs" alt="Ethiopian Special Tibs">
+                        <div class="signature-badge">Chef's Special</div>
+                    </div>
+                    <div class="signature-content">
+                        <div class="signature-header">
+                            <h3>Ethiopian Special Tibs</h3>
+                            <span class="signature-price">350 ETB</span>
+                        </div>
+                        <p class="signature-description">Sizzling tender meat chunks sautéed with berbere sauce, onions, and fresh rosemary. Served with injera.</p>
+                        <div class="signature-tags">
+                            <span class="signature-tag"><i class="fas fa-fire"></i> Spicy</span>
+                            <span class="signature-tag"><i class="fas fa-flag-checkered"></i> Traditional</span>
+                            <span class="signature-tag"><i class="fas fa-star"></i> Signature</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="signature-card animate-on-scroll">
+                    <div class="signature-image">
+                        <img src="https://placehold.co/600x450/2D8A4E/C9A96E?text=Coffee+Ceremony" alt="Ethiopian Coffee Ceremony">
+                        <div class="signature-badge">Award Winner</div>
+                    </div>
+                    <div class="signature-content">
+                        <div class="signature-header">
+                            <h3>Traditional Coffee Ceremony</h3>
+                            <span class="signature-price">180 ETB</span>
+                        </div>
+                        <p class="signature-description">Authentic Ethiopian coffee experience with roasted beans, incense, and traditional popcorn.</p>
+                        <div class="signature-tags">
+                            <span class="signature-tag"><i class="fas fa-crown"></i> Premium</span>
+                            <span class="signature-tag"><i class="fas fa-landmark"></i> Cultural</span>
+                            <span class="signature-tag"><i class="fas fa-thumbs-up"></i> Must Try</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="signature-card animate-on-scroll">
+                    <div class="signature-image">
+                        <img src="https://placehold.co/600x450/2D8A4E/C9A96E?text=Mocktail" alt="Signature Mocktail">
+                        <div class="signature-badge">New</div>
+                    </div>
+                    <div class="signature-content">
+                        <div class="signature-header">
+                            <h3>Ethiopian Sunset Mocktail</h3>
+                            <span class="signature-price">150 ETB</span>
+                        </div>
+                        <p class="signature-description">Refreshing blend of mango, passion fruit, and a hint of ginger. A taste of Ethiopia in every sip.</p>
+                        <div class="signature-tags">
+                            <span class="signature-tag"><i class="fas fa-leaf"></i> Refreshing</span>
+                            <span class="signature-tag"><i class="fas fa-wine-bottle"></i> Alcohol-Free</span>
+                            <span class="signature-tag"><i class="fas fa-chart-line"></i> Popular</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            
-            <div class="text-center">
-                <a href="menu.html" class="btn-primary">View Full Menu →</a>
+            <div class="text-center mt-4">
+                <a href="menu.html" class="btn btn-primary">View Full Menu <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
 
     <!-- ===== CTA SECTION ===== -->
     <section class="cta-section">
-        <div class="cta-overlay"></div>
-        <div class="container">
-            <div class="cta-content">
+        <div class="cta-content">
+            <div class="container">
                 <h2>Ready to Experience Nate?</h2>
                 <p>Reserve your table today and discover why Nate Café is Addis Ababa's favorite dining destination.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn-primary btn-large">Reserve a Table Now →</a>
-                    <a href="tel:+251911116130" class="btn-secondary btn-large">📞 Call Us</a>
+                    <a href="reservation.html" class="btn btn-gold">Reserve a Table Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="tel:+251911116130" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Us</a>
                 </div>
             </div>
         </div>
@@ -201,129 +955,122 @@
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-info">
-                    <h3>NATE</h3>
-                    <p>Café & Restaurant</p>
-                    <p>Where every meal is a celebration of flavor — premium dining, fresh ingredients, and unforgettable moments.</p>
-                </div>
-                
-                <div class="footer-hours">
-                    <h4>Opening Hours</h4>
-                    <p>Open Daily: 7:00 AM - 11:00 PM</p>
-                    <p>Friday & Saturday: Until 12:00 AM</p>
-                    <p>Delivery: 8:00 AM - 10:00 PM</p>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>📍 Addis Ababa, Ethiopia</p>
-                    <p>📞 +251 911 116 130</p>
-                    <p>📞 +251 911 116 131 (Events)</p>
-                    <p>✉️ info@natecafe.com</p>
-                </div>
-                
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="#">Instagram</a>
-                        <a href="#">Facebook</a>
-                        <a href="#">Telegram</a>
-                        <a href="#">TikTok</a>
-                    </div>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>NATE</h4>
+                <p>Café & Restaurant</p>
+                <p>Where every meal is a celebration of flavor — premium dining, fresh ingredients, and unforgettable moments.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Opening Hours</h4>
+                <p>Monday - Thursday: 7AM - 11PM</p>
+                <p>Friday - Sunday: 7AM - 12AM</p>
+                <p>Delivery: 8AM - 10PM</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>📍 Addis Ababa, Ethiopia</p>
+                <p>📞 +251 911 116 130</p>
+                <p>📞 +251 911 116 131 (Events)</p>
+                <p>✉️ info@natecafe.com</p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a href="#"><i class="fab fa-tiktok"></i> TikTok</a>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Nate Café & Restaurant. All rights reserved. | Crafted with ☕ in Addis Ababa</p>
-            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nate Café & Restaurant. All rights reserved. Crafted with <i class="fas fa-heart" style="color: var(--gold);"></i> in Addis Ababa</p>
         </div>
     </footer>
 
     <!-- ===== SCRIPTS ===== -->
-    <script src="js/main.js"></script>
-    <script src="js/menu-loader.js"></script>
-    
-    <style>
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        
-        .cta-section {
-            position: relative;
-            padding: 100px 0;
-            background: linear-gradient(135deg, #0a2f1f 0%, #1a4a2a 100%);
-            overflow: hidden;
-        }
-        
-        .cta-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 30%, rgba(212, 163, 115, 0.15) 0%, transparent 70%);
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--text-light);
-        }
-        
-        .cta-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-        
-        .btn-large {
-            padding: 16px 40px;
-            font-size: 1.1rem;
-        }
-        
-        @media (max-width: 768px) {
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .cta-content h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        .hero-wave {
-            pointer-events: none;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        .loading-spinner {
-            text-align: center;
-            padding: 40px;
-            grid-column: 1/-1;
-        }
-    </style>
-    
     <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                if (menuBtn) menuBtn.textContent = '☰';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu && navMenu.classList.contains('active')) {
+                if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    if (menuBtn) menuBtn.textContent = '☰';
+                }
+            }
+        });
+        
+        // Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10,31,18,0.98)';
+                navbar.style.backdropFilter = 'blur(25px)';
+            } else {
+                navbar.style.background = 'rgba(10,31,18,0.97)';
+            }
+        });
+        
         // Page load animation
-        window.addEventListener('load', function() {
-            document.body.classList.add('loaded');
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '' && href !== '/' && href !== '/index.html') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
         });
     </script>
 </body>
