@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nate Café & Restaurant | Addis Ababa</title>
-    <meta name="description" content="Premium dining in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments at Nate Café.">
+    <title>Nate Café & Restaurant | Premium Dining in Addis Ababa</title>
+    <meta name="description" content="Experience premium dining in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments at Nate Café & Restaurant. 150+ menu items.">
+    <meta name="keywords" content="cafe addis ababa, restaurant ethiopia, nate cafe, premium dining, ethiopian coffee">
+    <meta name="author" content="Nate Café">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Nate Café & Restaurant">
+    <meta property="og:description" content="Premium dining experience in Addis Ababa. Fresh ingredients, artisan coffee, and unforgettable moments.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:image" content="https://placehold.co/1200x630/0a2f1f/d4a373?text=Nate+Cafe">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E☕%3C/text%3E%3C/svg%3E">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* Additional inline styles for smooth loading */
+        body {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- ===== NAVIGATION BAR ===== -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
@@ -29,25 +55,65 @@
         </div>
     </nav>
 
+    <!-- ===== HERO SECTION with SVG Background ===== -->
     <section class="hero">
+        <!-- SVG Background Pattern -->
+        <svg class="hero-bg-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="none">
+            <defs>
+                <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1.5" fill="rgba(212,163,115,0.15)"/>
+                </pattern>
+                <pattern id="coffee-beans" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                    <text x="5" y="15" font-size="12" fill="rgba(212,163,115,0.08)">☕</text>
+                    <text x="45" y="55" font-size="10" fill="rgba(212,163,115,0.06)">☕</text>
+                </pattern>
+                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#051a0f;stop-opacity:1" />
+                    <stop offset="50%" style="stop-color:#0a2f1f;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#1a4a2a;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <rect width="1440" height="800" fill="url(#heroGrad)"/>
+            <rect width="1440" height="800" fill="url(#dots)"/>
+            <rect width="1440" height="800" fill="url(#coffee-beans)"/>
+        </svg>
+        
         <div class="hero-overlay"></div>
+        
         <div class="hero-content">
             <div class="hero-badge">✦ Premium Dining ✦</div>
             <h1 class="hero-title">NATE</h1>
             <p class="hero-subtitle">Café & Restaurant</p>
             <p class="hero-description">Where every meal is a celebration of flavor — premium dining, fresh ingredients, and unforgettable moments in Addis Ababa</p>
+            
             <div class="hero-buttons">
                 <a href="menu.html" class="btn-primary">Explore Menu →</a>
                 <a href="contact.html" class="btn-secondary">Reserve Table</a>
             </div>
+            
             <div class="hero-stats">
-                <div class="stat"><span class="stat-number">7AM - 11PM</span><span class="stat-label">Open Daily</span></div>
-                <div class="stat"><span class="stat-number">✦ 4.8 ✦</span><span class="stat-label">Customer Rating</span></div>
-                <div class="stat"><span class="stat-number">150+</span><span class="stat-label">Menu Items</span></div>
+                <div class="stat">
+                    <span class="stat-number">7AM - 11PM</span>
+                    <span class="stat-label">Open Daily</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">✦ 4.8 ✦</span>
+                    <span class="stat-label">Customer Rating</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Menu Items</span>
+                </div>
             </div>
         </div>
+        
+        <!-- Bottom Wave SVG -->
+        <svg class="hero-wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none" style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 1;">
+            <path fill="#faf9f6" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,85.3C384,85,480,75,576,69.3C672,64,768,64,864,69.3C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+        </svg>
     </section>
 
+    <!-- ===== FEATURES SECTION ===== -->
     <section class="features">
         <div class="container">
             <div class="section-header">
@@ -55,17 +121,48 @@
                 <h2>The Nate Experience</h2>
                 <p>Discover what makes dining at Nate Café truly special</p>
             </div>
+            
             <div class="features-grid">
-                <div class="feature-card"><div class="feature-icon">🍽️</div><h3>Exceptional Cuisine</h3><p>From traditional Ethiopian dishes to international favorites.</p></div>
-                <div class="feature-card"><div class="feature-icon">☕</div><h3>Artisan Coffee</h3><p>Expertly brewed Ethiopian coffee — from macchiatos to lattes.</p></div>
-                <div class="feature-card"><div class="feature-icon">🍹</div><h3>Signature Mocktails</h3><p>Refreshing, handcrafted alcohol-free cocktails.</p></div>
-                <div class="feature-card"><div class="feature-icon">🎉</div><h3>Event Hosting</h3><p>Birthdays, anniversaries, corporate gatherings.</p></div>
-                <div class="feature-card"><div class="feature-icon">🚚</div><h3>Delivery Available</h3><p>Fast and reliable delivery across Addis Ababa.</p></div>
-                <div class="feature-card"><div class="feature-icon">❤️</div><h3>Made with Love</h3><p>Every dish infused with care and Ethiopian hospitality.</p></div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Exceptional Cuisine</h3>
+                    <p>From traditional Ethiopian dishes to international favorites, every plate is crafted with passion and the freshest ingredients.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3>Artisan Coffee</h3>
+                    <p>Expertly brewed Ethiopian coffee — from classic macchiatos to specialty lattes made with love and precision.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🍹</div>
+                    <h3>Signature Mocktails</h3>
+                    <p>Refreshing, handcrafted alcohol-free cocktails that elevate any meal or celebration.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎉</div>
+                    <h3>Event Hosting</h3>
+                    <p>Birthdays, anniversaries, corporate gatherings — let us make your special moments unforgettable.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Delivery Available</h3>
+                    <p>Enjoy Nate Café from the comfort of your home. Fast and reliable delivery across Addis Ababa.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Made with Love</h3>
+                    <p>Every dish, every drink, every moment at Nate is infused with care and Ethiopian hospitality.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== SIGNATURE DISHES SECTION ===== -->
     <section class="signature-dishes">
         <div class="container">
             <div class="section-header">
@@ -73,26 +170,161 @@
                 <h2>Signature Dishes</h2>
                 <p>Explore our most popular creations</p>
             </div>
+            
             <div id="featured-menu" class="dishes-grid">
-                <div class="loading-spinner">Loading delicious dishes...</div>
+                <div class="loading-spinner">
+                    <div style="display: inline-block; width: 40px; height: 40px; border: 3px solid #d4a373; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <p style="margin-top: 1rem;">Loading delicious dishes...</p>
+                </div>
             </div>
-            <div class="text-center"><a href="menu.html" class="btn-primary">View Full Menu →</a></div>
+            
+            <div class="text-center">
+                <a href="menu.html" class="btn-primary">View Full Menu →</a>
+            </div>
         </div>
     </section>
 
+    <!-- ===== CTA SECTION ===== -->
+    <section class="cta-section">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Nate?</h2>
+                <p>Reserve your table today and discover why Nate Café is Addis Ababa's favorite dining destination.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn-primary btn-large">Reserve a Table Now →</a>
+                    <a href="tel:+251911116130" class="btn-secondary btn-large">📞 Call Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-info"><h3>NATE</h3><p>Café & Restaurant</p><p>Where every meal is a celebration of flavor.</p></div>
-                <div class="footer-hours"><h4>Opening Hours</h4><p>Open Daily: 7:00 AM - 11:00 PM</p><p>Friday & Saturday: Until 12:00 AM</p></div>
-                <div class="footer-contact"><h4>Contact</h4><p>📍 Addis Ababa, Ethiopia</p><p>📞 +251 911 116 130</p><p>✉️ info@natecafe.com</p></div>
-                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Telegram</a></div></div>
+                <div class="footer-info">
+                    <h3>NATE</h3>
+                    <p>Café & Restaurant</p>
+                    <p>Where every meal is a celebration of flavor — premium dining, fresh ingredients, and unforgettable moments.</p>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Opening Hours</h4>
+                    <p>Open Daily: 7:00 AM - 11:00 PM</p>
+                    <p>Friday & Saturday: Until 12:00 AM</p>
+                    <p>Delivery: 8:00 AM - 10:00 PM</p>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📍 Addis Ababa, Ethiopia</p>
+                    <p>📞 +251 911 116 130</p>
+                    <p>📞 +251 911 116 131 (Events)</p>
+                    <p>✉️ info@natecafe.com</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Telegram</a>
+                        <a href="#">TikTok</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Nate Café & Restaurant. All rights reserved.</p></div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nate Café & Restaurant. All rights reserved. | Crafted with ☕ in Addis Ababa</p>
+            </div>
         </div>
     </footer>
 
+    <!-- ===== SCRIPTS ===== -->
     <script src="js/main.js"></script>
     <script src="js/menu-loader.js"></script>
+    
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .cta-section {
+            position: relative;
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0a2f1f 0%, #1a4a2a 100%);
+            overflow: hidden;
+        }
+        
+        .cta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(212, 163, 115, 0.15) 0%, transparent 70%);
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--text-light);
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        
+        .btn-large {
+            padding: 16px 40px;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .hero-wave {
+            pointer-events: none;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .loading-spinner {
+            text-align: center;
+            padding: 40px;
+            grid-column: 1/-1;
+        }
+    </style>
+    
+    <script>
+        // Page load animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 </html>
