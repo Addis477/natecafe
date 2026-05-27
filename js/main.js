@@ -1,14 +1,17 @@
-// ===== MOBILE SIDE NAVIGATION =====
+/* ============ NATE CAFÉ - COMPLETE JS ============ */
+
+// Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    const body = document.body;
     
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', function() {
+    // ===== MOBILE MENU TOGGLE =====
+    const menuBtn = document.getElementById('menuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            body.classList.toggle('menu-open');
-            this.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
     }
     
@@ -16,34 +19,23 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            body.classList.remove('menu-open');
-            if (mobileMenuBtn) mobileMenuBtn.textContent = '☰';
+            if (menuBtn) menuBtn.textContent = '☰';
+            document.body.style.overflow = '';
         });
     });
     
-    // Close menu when clicking outside (on overlay)
-    body.addEventListener('click', function(e) {
-        if (body.classList.contains('menu-open') && !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-            navMenu.classList.remove('active');
-            body.classList.remove('menu-open');
-            if (mobileMenuBtn) mobileMenuBtn.textContent = '☰';
-        }
-    });
-    
-    // ===== SCROLL EFFECT ON NAVBAR =====
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(10, 47, 31, 0.98)';
-            navbar.style.backdropFilter = 'blur(10px)';
-        } else {
-            navbar.style.background = 'rgba(10, 47, 31, 0.95)';
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                if (menuBtn) menuBtn.textContent = '☰';
+                document.body.style.overflow = '';
+            }
         }
     });
     
     // ===== SCROLL ANIMATIONS =====
-    const animateElements = document.querySelectorAll('.feature-card, .menu-card, .value-card, .differentiator-card, .testimonial-card, .event-card, .stat');
-    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -58,14 +50,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    animateElements.forEach(el => {
+    document.querySelectorAll('.animate-on-scroll, .feature-card, .signature-card, .why-card, .testimonial-card, .event-card').forEach(el => {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
     
-    // ===== MOUSE TRACKING FOR CARDS (Glow Effect) =====
-    const cards = document.querySelectorAll('.feature-card, .menu-card');
+    // ===== NAVBAR SCROLL EFFECT =====
+    const navbar = document.querySelector('.navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(10,31,18,0.98)';
+            navbar.style.backdropFilter = 'blur(25px)';
+        } else {
+            navbar.style.background = 'rgba(10,31,18,0.97)';
+        }
+    });
     
+    // ===== PAGE LOAD ANIMATION =====
+    window.addEventListener('load', () => {
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+    
+    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '' && href !== '/' && href !== '/index.html') {
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+    
+    // ===== CARD HOVER EFFECT (Mouse tracking glow) =====
+    const cards = document.querySelectorAll('.feature-card, .signature-card');
     cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
@@ -78,15 +103,35 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== SCROLL TO TOP BUTTON =====
     const scrollBtn = document.createElement('button');
-    scrollBtn.innerHTML = '↑';
+    scrollBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     scrollBtn.className = 'scroll-top';
+    scrollBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--gold, #C9A96E);
+        color: var(--green-bg, #0A1F12);
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+        font-size: 1.2rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    `;
     document.body.appendChild(scrollBtn);
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
-            scrollBtn.classList.add('visible');
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.visibility = 'visible';
         } else {
-            scrollBtn.classList.remove('visible');
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.visibility = 'hidden';
         }
     });
     
@@ -94,33 +139,23 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
     
-    // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
+    // ===== FORM SUBMISSION (Contact Page) =====
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! We will respond within 24 hours.');
+            this.reset();
         });
-    });
+    }
     
-    // ===== LOADING ANIMATION =====
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    });
-});
-
-// ===== PARALLAX EFFECT FOR HERO =====
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.backgroundPosition = `50% ${scrolled * 0.5}px`;
+    // ===== RESERVATION FORM =====
+    const reservationForm = document.getElementById('reservationForm');
+    if (reservationForm) {
+        reservationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Reservation request sent! We will confirm within 2 hours.');
+            this.reset();
+        });
     }
 });
