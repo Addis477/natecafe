@@ -4,7 +4,7 @@
       "name": "Ethiopian Special Tibs",
       "category": "Ethiopian Specials",
       "price": 400,
-      "description": "Sizzling tender meat chunks sautÃÂ©ed with berbere sauce, onions, and fresh rosemary. Served with injera.",
+      "description": "Sizzling tender meat chunks sautÃÂÃÂ©ed with berbere sauce, onions, and fresh rosemary. Served with injera.",
       "tags": [
         "Chef's Special"
       ],
@@ -17,9 +17,9 @@
       "price": 320,
       "description": "Traditional spicy chicken stew with hard-boiled egg, simmered for hours in berbere and niter kibbeh.",
       "tags": [
-        "Ã°ÂÂÂ¥ Spicy",
-        "Ã¢Â­Â Famous",
-        "Ã°ÂÂÂªÃ°ÂÂÂ¹ National Dish"
+        "ÃÂ°ÃÂÃÂÃÂ¥ Spicy",
+        "ÃÂ¢ÃÂ­ÃÂ Famous",
+        "ÃÂ°ÃÂÃÂÃÂªÃÂ°ÃÂÃÂÃÂ¹ National Dish"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Doro+Wat",
       "badge": "Signature"
@@ -30,8 +30,8 @@
       "price": 380,
       "description": "Minced raw beef seasoned with mitmita and kibe, served with homemade cheese and greens.",
       "tags": [
-        "Ã¢Â­Â Delicacy",
-        "Ã°ÂÂÂªÃ°ÂÂÂ¹ Traditional"
+        "ÃÂ¢ÃÂ­ÃÂ Delicacy",
+        "ÃÂ°ÃÂÃÂÃÂªÃÂ°ÃÂÃÂÃÂ¹ Traditional"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Kitfo",
       "badge": "Premium"
@@ -42,8 +42,8 @@
       "price": 180,
       "description": "Smooth chickpea and bean stew with berbere and garlic. Perfect vegetarian option.",
       "tags": [
-        "Ã°ÂÂÂ± Vegan",
-        "Ã¢Â­Â Popular"
+        "ÃÂ°ÃÂÃÂÃÂ± Vegan",
+        "ÃÂ¢ÃÂ­ÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Shiro+Wat",
       "badge": ""
@@ -54,8 +54,8 @@
       "price": 280,
       "description": "Grass-fed beef patty, caramelized onions, melted cheddar, special sauce, and fresh lettuce.",
       "tags": [
-        "Ã°ÂÂÂ Best Seller",
-        "Ã¢Â­Â Popular"
+        "ÃÂ°ÃÂÃÂÃÂ Best Seller",
+        "ÃÂ¢ÃÂ­ÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Burger",
       "badge": "Best Seller"
@@ -66,8 +66,8 @@
       "price": 240,
       "description": "Creamy pasta with crispy pancetta, parmesan cheese, and fresh egg yolk.",
       "tags": [
-        "Ã°ÂÂÂ Italian",
-        "Ã¢Â­Â Classic"
+        "ÃÂ°ÃÂÃÂÃÂ Italian",
+        "ÃÂ¢ÃÂ­ÃÂ Classic"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Carbonara",
       "badge": ""
@@ -78,8 +78,8 @@
       "price": 420,
       "description": "Fresh Atlantic salmon grilled to perfection, served with seasonal vegetables and lemon butter sauce.",
       "tags": [
-        "Ã°ÂÂÂ Premium",
-        "Ã°ÂÂ¥Â Healthy"
+        "ÃÂ°ÃÂÃÂÃÂ Premium",
+        "ÃÂ°ÃÂÃÂ¥ÃÂ Healthy"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Salmon",
       "badge": "Premium"
@@ -90,8 +90,8 @@
       "price": 120,
       "description": "Crispy rice paper rolls filled with fresh vegetables and glass noodles, served with sweet chili dip.",
       "tags": [
-        "Ã°ÂÂÂ± Vegetarian",
-        "Ã°ÂÂ¥Â¢ Crispy"
+        "ÃÂ°ÃÂÃÂÃÂ± Vegetarian",
+        "ÃÂ°ÃÂÃÂ¥ÃÂ¢ Crispy"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Spring+Rolls",
       "badge": ""
@@ -102,8 +102,8 @@
       "price": 90,
       "description": "Crispy pastry filled with spiced lentils or minced meat. Ethiopian favorite.",
       "tags": [
-        "Ã°ÂÂÂªÃ°ÂÂÂ¹ Traditional",
-        "Ã°ÂÂÂ¥ Spicy"
+        "ÃÂ°ÃÂÃÂÃÂªÃÂ°ÃÂÃÂÃÂ¹ Traditional",
+        "ÃÂ°ÃÂÃÂÃÂ¥ Spicy"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sambusa",
       "badge": "Popular"
@@ -114,7 +114,7 @@
       "price": 70,
       "description": "Toasted baguette with garlic butter and herbs.",
       "tags": [
-        "Ã°ÂÂÂ Classic"
+        "ÃÂ°ÃÂÃÂÃÂ Classic"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Garlic+Bread",
       "badge": ""
@@ -125,9 +125,9 @@
       "price": 180,
       "description": "Authentic Ethiopian coffee experience with roasted beans, incense, and traditional popcorn.",
       "tags": [
-        "Ã¢Â­Â Cultural",
-        "Ã¢ÂÂ Premium",
-        "Ã°ÂÂÂ Award Winner"
+        "ÃÂ¢ÃÂ­ÃÂ Cultural",
+        "ÃÂ¢ÃÂÃÂ Premium",
+        "ÃÂ°ÃÂÃÂÃÂ Award Winner"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Coffee+Ceremony",
       "badge": "Award Winner"
@@ -138,7 +138,7 @@
       "price": 65,
       "description": "Traditional Ethiopian macchiato with a perfect balance of espresso and milk.",
       "tags": [
-        "Ã¢ÂÂ Classic"
+        "ÃÂ¢ÃÂÃÂ Classic"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Macchiato",
       "badge": ""
@@ -149,7 +149,7 @@
       "price": 75,
       "description": "Smooth espresso with steamed milk and a light layer of foam. Art on request.",
       "tags": [
-        "Ã¢ÂÂ Popular"
+        "ÃÂ¢ÃÂÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Latte",
       "badge": ""
@@ -160,7 +160,7 @@
       "price": 70,
       "description": "Classic Italian cappuccino with rich espresso, steamed milk, and foam.",
       "tags": [
-        "Ã¢ÂÂ Classic"
+        "ÃÂ¢ÃÂÃÂ Classic"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cappuccino",
       "badge": ""
@@ -171,8 +171,8 @@
       "price": 150,
       "description": "Refreshing blend of mango, passion fruit, and a hint of ginger. A taste of Ethiopia in every sip.",
       "tags": [
-        "Ã°ÂÂÂ¹ Refreshing",
-        "Ã¢Â­Â Popular"
+        "ÃÂ°ÃÂÃÂÃÂ¹ Refreshing",
+        "ÃÂ¢ÃÂ­ÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sunset+Mocktail",
       "badge": "New"
@@ -183,8 +183,8 @@
       "price": 110,
       "description": "Freshly squeezed lemons, fresh mint, and a touch of honey.",
       "tags": [
-        "Ã°ÂÂÂ Refreshing",
-        "Ã°ÂÂÂ± Healthy"
+        "ÃÂ°ÃÂÃÂÃÂ Refreshing",
+        "ÃÂ°ÃÂÃÂÃÂ± Healthy"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Mint+Lemonade",
       "badge": ""
@@ -195,8 +195,8 @@
       "price": 160,
       "description": "Pineapple, coconut, and orange blend. Taste the tropics.",
       "tags": [
-        "Ã°ÂÂÂ Tropical",
-        "Ã¢Â­Â Popular"
+        "ÃÂ°ÃÂÃÂÃÂ Tropical",
+        "ÃÂ¢ÃÂ­ÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tropical+Breeze",
       "badge": ""
@@ -207,8 +207,8 @@
       "price": 180,
       "description": "Creamy New York cheesecake topped with Ethiopian honeycomb.",
       "tags": [
-        "Ã°ÂÂÂ° Sweet",
-        "Ã¢Â­Â Best Seller"
+        "ÃÂ°ÃÂÃÂÃÂ° Sweet",
+        "ÃÂ¢ÃÂ­ÃÂ Best Seller"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cheesecake",
       "badge": "Best Seller"
@@ -219,8 +219,8 @@
       "price": 120,
       "description": "Layers of flaky phyllo dough, chopped nuts, and honey syrup.",
       "tags": [
-        "Ã°ÂÂÂ¹Ã°ÂÂÂ· Premium",
-        "Ã°ÂÂÂ¯ Sweet"
+        "ÃÂ°ÃÂÃÂÃÂ¹ÃÂ°ÃÂÃÂÃÂ· Premium",
+        "ÃÂ°ÃÂÃÂÃÂ¯ Sweet"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Baklava",
       "badge": ""
@@ -231,12 +231,12 @@
       "price": 160,
       "description": "Warm chocolate cake with a molten center, served with vanilla ice cream.",
       "tags": [
-        "Ã°ÂÂÂ« Decadent",
-        "Ã¢Â­Â Popular"
+        "ÃÂ°ÃÂÃÂÃÂ« Decadent",
+        "ÃÂ¢ÃÂ­ÃÂ Popular"
       ],
       "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Lava+Cake",
       "badge": ""
     }
   ],
-  "sha": "37701902313e5527bc2cb559fe5e298d5787691a"
+  "sha": "4d62718de3efe508b8c0a6ca47a4e2f084babbfd"
 }
