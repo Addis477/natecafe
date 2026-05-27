@@ -85,11 +85,21 @@
             box-shadow: 0 4px 15px rgba(45,138,78,0.3);
         }
         
-        /* Menu Grid */
+        /* Menu Grid - Stable to prevent flickering */
         .menu-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
             gap: 2rem; 
+            min-height: 400px;
+            transition: opacity 0.2s ease;
+        }
+        
+        /* Fade transition for content updates */
+        .menu-grid.fade-out {
+            opacity: 0;
+        }
+        .menu-grid.fade-in {
+            opacity: 1;
         }
         
         /* Menu Card - Premium Design */
@@ -97,13 +107,14 @@
             background: #0F2D1A; 
             border-radius: 24px; 
             overflow: hidden; 
-            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1); 
             border: 1px solid rgba(45,138,78,0.2); 
             cursor: pointer;
             position: relative;
+            will-change: transform;
         }
         .menu-card:hover { 
-            transform: translateY(-10px); 
+            transform: translateY(-8px); 
             border-color: #C9A96E; 
             box-shadow: 0 25px 45px rgba(0,0,0,0.4);
         }
@@ -111,17 +122,18 @@
         /* Menu Image */
         .menu-image { 
             position: relative; 
-            height: 240px; 
+            height: 220px; 
             overflow: hidden; 
+            background: #0A2A16;
         }
         .menu-image img { 
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: transform 0.6s ease; 
+            transition: transform 0.4s ease; 
         }
         .menu-card:hover .menu-image img { 
-            transform: scale(1.1); 
+            transform: scale(1.05); 
         }
         
         /* Menu Badge */
@@ -148,6 +160,8 @@
             justify-content: space-between; 
             align-items: baseline; 
             margin-bottom: 0.75rem; 
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         .menu-header h3 { 
             font-size: 1.2rem; 
@@ -180,6 +194,7 @@
             font-size: 0.7rem; 
             color: #C9A96E; 
             font-weight: 500;
+            white-space: nowrap;
         }
         
         /* Load More Button */
@@ -228,10 +243,37 @@
             .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.5rem; }
             .menu-filters { gap: 0.5rem; }
             .filter-btn { padding: 6px 14px; font-size: 0.75rem; }
+            .menu-tag { font-size: 0.65rem; padding: 3px 8px; }
         }
         @media (max-width: 480px) {
             .page-hero h1 { font-size: 2rem; }
             .hero-badge { font-size: 0.6rem; }
+        }
+        
+        /* Loading Skeleton */
+        .skeleton-card {
+            background: #0F2D1A;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid rgba(45,138,78,0.2);
+        }
+        .skeleton-image {
+            height: 220px;
+            background: linear-gradient(90deg, #0A2A16 25%, #0F2D1A 50%, #0A2A16 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        .skeleton-text {
+            height: 60px;
+            margin: 1rem;
+            background: linear-gradient(90deg, #0A2A16 25%, #0F2D1A 50%, #0A2A16 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 8px;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
     </style>
 </head>
@@ -324,35 +366,30 @@
     </footer>
 
     <script>
-        // Complete Menu Data (25+ items - expandable to 150+)
+        // Complete Menu Data (20+ items - expandable to 150+)
         const menuItems = [
             // Ethiopian Specials
             { name: "Ethiopian Special Tibs", category: "Ethiopian Specials", price: 350, description: "Sizzling tender meat chunks sautéed with berbere sauce, onions, and fresh rosemary. Served with injera.", tags: ["🔥 Spicy", "⭐ Traditional", "👨‍🍳 Chef's Special"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tibs", badge: "Chef's Special" },
             { name: "Doro Wat", category: "Ethiopian Specials", price: 320, description: "Traditional spicy chicken stew with hard-boiled egg, simmered for hours in berbere and niter kibbeh.", tags: ["🔥 Spicy", "⭐ Famous", "🇪🇹 National Dish"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Doro+Wat", badge: "Signature" },
             { name: "Kitfo", category: "Ethiopian Specials", price: 380, description: "Minced raw beef seasoned with mitmita and kibe, served with homemade cheese and greens.", tags: ["⭐ Delicacy", "🇪🇹 Traditional"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Kitfo", badge: "Premium" },
             { name: "Shiro Wat", category: "Ethiopian Specials", price: 180, description: "Smooth chickpea and bean stew with berbere and garlic. Perfect vegetarian option.", tags: ["🌱 Vegan", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Shiro+Wat", badge: "" },
-            
             // Main Courses
             { name: "Special Burger", category: "Main Courses", price: 280, description: "Grass-fed beef patty, caramelized onions, melted cheddar, special sauce, and fresh lettuce.", tags: ["🍔 Best Seller", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Burger", badge: "Best Seller" },
             { name: "Spaghetti Carbonara", category: "Main Courses", price: 240, description: "Creamy pasta with crispy pancetta, parmesan cheese, and fresh egg yolk.", tags: ["🍝 Italian", "⭐ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Carbonara", badge: "" },
             { name: "Grilled Salmon", category: "Main Courses", price: 420, description: "Fresh Atlantic salmon grilled to perfection, served with seasonal vegetables and lemon butter sauce.", tags: ["🐟 Premium", "🥗 Healthy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Salmon", badge: "Premium" },
-            
             // Appetizers
             { name: "Fresh Spring Rolls", category: "Appetizers", price: 120, description: "Crispy rice paper rolls filled with fresh vegetables and glass noodles, served with sweet chili dip.", tags: ["🌱 Vegetarian", "🥢 Crispy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Spring+Rolls", badge: "" },
             { name: "Sambusa", category: "Appetizers", price: 90, description: "Crispy pastry filled with spiced lentils or minced meat. Ethiopian favorite.", tags: ["🇪🇹 Traditional", "🔥 Spicy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sambusa", badge: "Popular" },
             { name: "Garlic Bread", category: "Appetizers", price: 70, description: "Toasted baguette with garlic butter and herbs.", tags: ["🍞 Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Garlic+Bread", badge: "" },
-            
             // Coffee & Drinks
             { name: "Traditional Coffee Ceremony", category: "Coffee & Drinks", price: 180, description: "Authentic Ethiopian coffee experience with roasted beans, incense, and traditional popcorn.", tags: ["⭐ Cultural", "☕ Premium", "🏆 Award Winner"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Coffee+Ceremony", badge: "Award Winner" },
             { name: "Macchiato", category: "Coffee & Drinks", price: 65, description: "Traditional Ethiopian macchiato with a perfect balance of espresso and milk.", tags: ["☕ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Macchiato", badge: "" },
             { name: "Latte", category: "Coffee & Drinks", price: 75, description: "Smooth espresso with steamed milk and a light layer of foam. Art on request.", tags: ["☕ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Latte", badge: "" },
             { name: "Cappuccino", category: "Coffee & Drinks", price: 70, description: "Classic Italian cappuccino with rich espresso, steamed milk, and foam.", tags: ["☕ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cappuccino", badge: "" },
-            
             // Mocktails
             { name: "Ethiopian Sunset Mocktail", category: "Mocktails", price: 150, description: "Refreshing blend of mango, passion fruit, and a hint of ginger. A taste of Ethiopia in every sip.", tags: ["🍹 Refreshing", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sunset+Mocktail", badge: "New" },
             { name: "Mint Lemonade", category: "Mocktails", price: 110, description: "Freshly squeezed lemons, fresh mint, and a touch of honey.", tags: ["🍋 Refreshing", "🌱 Healthy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Mint+Lemonade", badge: "" },
             { name: "Tropical Breeze", category: "Mocktails", price: 160, description: "Pineapple, coconut, and orange blend. Taste the tropics.", tags: ["🍍 Tropical", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tropical+Breeze", badge: "" },
-            
             // Desserts
             { name: "Honeycomb Cheesecake", category: "Desserts", price: 180, description: "Creamy New York cheesecake topped with Ethiopian honeycomb.", tags: ["🍰 Sweet", "⭐ Best Seller"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cheesecake", badge: "Best Seller" },
             { name: "Baklava", category: "Desserts", price: 120, description: "Layers of flaky phyllo dough, chopped nuts, and honey syrup.", tags: ["🇹🇷 Premium", "🍯 Sweet"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Baklava", badge: "" },
@@ -360,8 +397,9 @@
         ];
 
         let currentCategory = 'all';
-        let visibleCount = 9; // Show 9 items initially
+        let visibleCount = 9;
         let filteredItems = [...menuItems];
+        let isUpdating = false;
 
         function filterItems() {
             if (currentCategory === 'all') {
@@ -372,50 +410,68 @@
         }
 
         function displayMenu() {
-            filterItems();
-            const visibleItems = filteredItems.slice(0, visibleCount);
+            if (isUpdating) return;
+            isUpdating = true;
+            
             const container = document.getElementById('menuContainer');
             
-            if (visibleItems.length === 0) {
-                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 60px; background: #0F2D1A; border-radius: 24px;">
-                    <i class="fas fa-utensils" style="font-size: 3rem; color: #C9A96E; margin-bottom: 1rem; display: block;"></i>
-                    <h3 style="color: #C9A96E; margin-bottom: 0.5rem;">No Items Found</h3>
-                    <p style="color: #8FA89A;">Try a different category</p>
-                </div>`;
-            } else {
-                container.innerHTML = visibleItems.map(item => `
-                    <div class="menu-card">
-                        <div class="menu-image">
-                            <img src="${item.image}" alt="${item.name}" loading="lazy">
-                            ${item.badge ? `<div class="menu-badge">${item.badge}</div>` : ''}
-                        </div>
-                        <div class="menu-content">
-                            <div class="menu-header">
-                                <h3>${item.name}</h3>
-                                <span class="menu-price">${item.price} ETB</span>
-                            </div>
-                            <p class="menu-description">${item.description}</p>
-                            <div class="menu-tags">
-                                ${item.tags.map(tag => `<span class="menu-tag">${tag}</span>`).join('')}
-                            </div>
-                        </div>
-                    </div>
-                `).join('');
-            }
+            // Add fade out effect
+            container.classList.add('fade-out');
             
-            // Load More Button Logic
-            const loadMoreDiv = document.getElementById('loadMoreContainer');
-            if (filteredItems.length > visibleCount) {
-                loadMoreDiv.innerHTML = `<button class="load-more-btn" onclick="loadMore()">
-                    Load More (${visibleCount} of ${filteredItems.length}) <i class="fas fa-arrow-down"></i>
-                </button>`;
-            } else if (filteredItems.length > 0) {
-                loadMoreDiv.innerHTML = `<p style="color: #8FA89A; text-align: center;">
-                    <i class="fas fa-check-circle" style="color: #2D8A4E;"></i> Showing all ${filteredItems.length} delicious items
-                </p>`;
-            } else {
-                loadMoreDiv.innerHTML = '';
-            }
+            setTimeout(() => {
+                filterItems();
+                const visibleItems = filteredItems.slice(0, visibleCount);
+                
+                if (visibleItems.length === 0) {
+                    container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 60px; background: #0F2D1A; border-radius: 24px;">
+                        <i class="fas fa-utensils" style="font-size: 3rem; color: #C9A96E; margin-bottom: 1rem; display: block;"></i>
+                        <h3 style="color: #C9A96E; margin-bottom: 0.5rem;">No Items Found</h3>
+                        <p style="color: #8FA89A;">Try a different category</p>
+                    </div>`;
+                } else {
+                    container.innerHTML = visibleItems.map(item => `
+                        <div class="menu-card">
+                            <div class="menu-image">
+                                <img src="${item.image}" alt="${item.name}" loading="lazy">
+                                ${item.badge ? `<div class="menu-badge">${item.badge}</div>` : ''}
+                            </div>
+                            <div class="menu-content">
+                                <div class="menu-header">
+                                    <h3>${item.name}</h3>
+                                    <span class="menu-price">${item.price} ETB</span>
+                                </div>
+                                <p class="menu-description">${item.description}</p>
+                                <div class="menu-tags">
+                                    ${item.tags.map(tag => `<span class="menu-tag">${tag}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+                
+                // Load More Button Logic
+                const loadMoreDiv = document.getElementById('loadMoreContainer');
+                if (filteredItems.length > visibleCount) {
+                    loadMoreDiv.innerHTML = `<button class="load-more-btn" onclick="loadMore()">
+                        Load More (${visibleCount} of ${filteredItems.length}) <i class="fas fa-arrow-down"></i>
+                    </button>`;
+                } else if (filteredItems.length > 0) {
+                    loadMoreDiv.innerHTML = `<p style="color: #8FA89A; text-align: center;">
+                        <i class="fas fa-check-circle" style="color: #2D8A4E;"></i> Showing all ${filteredItems.length} delicious items
+                    </p>`;
+                } else {
+                    loadMoreDiv.innerHTML = '';
+                }
+                
+                // Add fade in effect
+                container.classList.remove('fade-out');
+                container.classList.add('fade-in');
+                setTimeout(() => {
+                    container.classList.remove('fade-in');
+                }, 100);
+                
+                isUpdating = false;
+            }, 150);
         }
 
         function loadMore() {
@@ -427,12 +483,16 @@
             const filters = document.querySelectorAll('.filter-btn');
             filters.forEach(btn => {
                 btn.addEventListener('click', () => {
+                    if (isUpdating) return;
                     filters.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     currentCategory = btn.dataset.category;
                     visibleCount = 9;
                     displayMenu();
-                    window.scrollTo({ top: 600, behavior: 'smooth' });
+                    // Smooth scroll to menu after filter
+                    setTimeout(() => {
+                        document.querySelector('.menu-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 200);
                 });
             });
         }
