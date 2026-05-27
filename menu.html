@@ -11,7 +11,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: #0A1F12; color: #E8F5EC; }
         
-        /* Navigation */
         .navbar { background: rgba(10,31,18,0.97); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(45,138,78,0.3); position: fixed; top: 0; width: 100%; z-index: 1000; }
         .nav-container { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; color: #C9A96E; font-family: 'Playfair Display', serif; text-decoration: none; display: flex; align-items: center; gap: 10px; }
@@ -25,55 +24,28 @@
         .nav-cta { background: #2D8A4E; color: #fff !important; padding: 10px 22px !important; border-radius: 50px !important; }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; color: #C9A96E; cursor: pointer; }
         
-        /* Page Hero */
         .page-hero { 
             position: relative; 
             background: linear-gradient(0deg, rgba(10,31,18,0.75) 0%, rgba(10,31,18,0.55) 100%), 
                         url('https://raw.githubusercontent.com/Addis477/natecafe/main/menu.jpg') center/cover no-repeat; 
-            min-height: 45vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            text-align: center; 
-            overflow: hidden; 
-            margin-top: 70px; 
+            min-height: 45vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; margin-top: 70px; 
         }
-        .hero-bg-pattern { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; 
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); 
-        }
+        .hero-bg-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
         .page-hero-content { position: relative; z-index: 2; padding: 100px 24px 80px; }
         .hero-badge { display: inline-block; background: #2D8A4E; color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 20px; }
         .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #C9A96E; margin-bottom: 1rem; }
         .page-hero p { color: #B8D4C2; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
         
-        /* Menu Section */
         .container { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
         .menu-section { padding: 60px 0 80px; }
         
-        /* Category Filters */
         .menu-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
-        .filter-btn { 
-            background: transparent; border: 2px solid rgba(45,138,78,0.5); color: #B8D4C2; 
-            padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: 0.2s; font-weight: 600; font-size: 0.9rem;
-        }
+        .filter-btn { background: transparent; border: 2px solid rgba(45,138,78,0.5); color: #B8D4C2; padding: 10px 24px; border-radius: 50px; cursor: pointer; transition: 0.2s; font-weight: 600; }
         .filter-btn:hover, .filter-btn.active { background: #2D8A4E; color: white; border-color: #2D8A4E; transform: translateY(-2px); }
         
-        /* Menu Grid - NO FLICKER */
-        .menu-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 2rem; 
-            min-height: 400px;
-        }
+        .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; min-height: 400px; }
         
-        /* Menu Card */
-        .menu-card { 
-            background: #0F2D1A; border-radius: 24px; overflow: hidden; 
-            transition: transform 0.3s ease, border-color 0.2s; 
-            border: 1px solid rgba(45,138,78,0.2); 
-            cursor: pointer;
-        }
+        .menu-card { background: #0F2D1A; border-radius: 24px; overflow: hidden; transition: transform 0.3s ease, border-color 0.2s; border: 1px solid rgba(45,138,78,0.2); cursor: pointer; }
         .menu-card:hover { transform: translateY(-8px); border-color: #C9A96E; box-shadow: 0 25px 45px rgba(0,0,0,0.4); }
         
         .menu-image { position: relative; height: 220px; overflow: hidden; background: #0A2A16; }
@@ -84,7 +56,7 @@
         .menu-content { padding: 1.5rem; }
         .menu-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem; }
         .menu-header h3 { font-size: 1.2rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', serif; }
-        .menu-price { font-size: 1.2rem; font-weight: 700; color: #C9A96E; font-family: 'Playfair Display', serif; }
+        .menu-price { font-size: 1.2rem; font-weight: 700; color: #C9A96E; }
         .menu-description { color: #8FA89A; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem; }
         .menu-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
         .menu-tag { background: rgba(45,138,78,0.2); padding: 4px 12px; border-radius: 50px; font-size: 0.7rem; color: #C9A96E; font-weight: 500; }
@@ -93,7 +65,6 @@
         .load-more-btn { background: transparent; border: 2px solid #C9A96E; color: #C9A96E; padding: 12px 36px; border-radius: 50px; cursor: pointer; transition: 0.2s; font-weight: 700; }
         .load-more-btn:hover { background: #C9A96E; color: #0A1F12; transform: translateY(-3px); }
         
-        /* Footer */
         .footer { background: #051A0D; padding: 3rem 2rem 2rem; border-top: 1px solid rgba(45,138,78,0.2); margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; max-width: 1300px; margin: 0 auto; }
         .footer-col h4 { color: #fff; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
@@ -156,7 +127,9 @@
                 <button class="filter-btn" data-category="Mocktails">🍹 Mocktails</button>
                 <button class="filter-btn" data-category="Desserts">🍰 Desserts</button>
             </div>
-            <div id="menuContainer" class="menu-grid"></div>
+            <div id="menuContainer" class="menu-grid">
+                <div style="grid-column:1/-1; text-align:center; padding:60px;">Loading menu...</div>
+            </div>
             <div id="loadMoreContainer" class="load-more-container"></div>
         </div>
     </section>
@@ -172,42 +145,37 @@
     </footer>
 
     <script>
-        // Menu Data
-        const menuItems = [
-            { name: "Ethiopian Special Tibs", category: "Ethiopian Specials", price: 350, description: "Sizzling tender meat chunks sautéed with berbere sauce, onions, and fresh rosemary. Served with injera.", tags: ["🔥 Spicy", "⭐ Traditional", "👨‍🍳 Chef's Special"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tibs", badge: "Chef's Special" },
-            { name: "Doro Wat", category: "Ethiopian Specials", price: 320, description: "Traditional spicy chicken stew with hard-boiled egg, simmered for hours in berbere and niter kibbeh.", tags: ["🔥 Spicy", "⭐ Famous", "🇪🇹 National Dish"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Doro+Wat", badge: "Signature" },
-            { name: "Kitfo", category: "Ethiopian Specials", price: 380, description: "Minced raw beef seasoned with mitmita and kibe, served with homemade cheese and greens.", tags: ["⭐ Delicacy", "🇪🇹 Traditional"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Kitfo", badge: "Premium" },
-            { name: "Shiro Wat", category: "Ethiopian Specials", price: 180, description: "Smooth chickpea and bean stew with berbere and garlic. Perfect vegetarian option.", tags: ["🌱 Vegan", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Shiro+Wat", badge: "" },
-            { name: "Special Burger", category: "Main Courses", price: 280, description: "Grass-fed beef patty, caramelized onions, melted cheddar, special sauce, and fresh lettuce.", tags: ["🍔 Best Seller", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Burger", badge: "Best Seller" },
-            { name: "Spaghetti Carbonara", category: "Main Courses", price: 240, description: "Creamy pasta with crispy pancetta, parmesan cheese, and fresh egg yolk.", tags: ["🍝 Italian", "⭐ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Carbonara", badge: "" },
-            { name: "Grilled Salmon", category: "Main Courses", price: 420, description: "Fresh Atlantic salmon grilled to perfection, served with seasonal vegetables and lemon butter sauce.", tags: ["🐟 Premium", "🥗 Healthy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Salmon", badge: "Premium" },
-            { name: "Fresh Spring Rolls", category: "Appetizers", price: 120, description: "Crispy rice paper rolls filled with fresh vegetables and glass noodles, served with sweet chili dip.", tags: ["🌱 Vegetarian", "🥢 Crispy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Spring+Rolls", badge: "" },
-            { name: "Sambusa", category: "Appetizers", price: 90, description: "Crispy pastry filled with spiced lentils or minced meat. Ethiopian favorite.", tags: ["🇪🇹 Traditional", "🔥 Spicy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sambusa", badge: "Popular" },
-            { name: "Garlic Bread", category: "Appetizers", price: 70, description: "Toasted baguette with garlic butter and herbs.", tags: ["🍞 Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Garlic+Bread", badge: "" },
-            { name: "Traditional Coffee Ceremony", category: "Coffee & Drinks", price: 180, description: "Authentic Ethiopian coffee experience with roasted beans, incense, and traditional popcorn.", tags: ["⭐ Cultural", "☕ Premium", "🏆 Award Winner"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Coffee+Ceremony", badge: "Award Winner" },
-            { name: "Macchiato", category: "Coffee & Drinks", price: 65, description: "Traditional Ethiopian macchiato with a perfect balance of espresso and milk.", tags: ["☕ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Macchiato", badge: "" },
-            { name: "Latte", category: "Coffee & Drinks", price: 75, description: "Smooth espresso with steamed milk and a light layer of foam. Art on request.", tags: ["☕ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Latte", badge: "" },
-            { name: "Cappuccino", category: "Coffee & Drinks", price: 70, description: "Classic Italian cappuccino with rich espresso, steamed milk, and foam.", tags: ["☕ Classic"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cappuccino", badge: "" },
-            { name: "Ethiopian Sunset Mocktail", category: "Mocktails", price: 150, description: "Refreshing blend of mango, passion fruit, and a hint of ginger. A taste of Ethiopia in every sip.", tags: ["🍹 Refreshing", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Sunset+Mocktail", badge: "New" },
-            { name: "Mint Lemonade", category: "Mocktails", price: 110, description: "Freshly squeezed lemons, fresh mint, and a touch of honey.", tags: ["🍋 Refreshing", "🌱 Healthy"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Mint+Lemonade", badge: "" },
-            { name: "Tropical Breeze", category: "Mocktails", price: 160, description: "Pineapple, coconut, and orange blend. Taste the tropics.", tags: ["🍍 Tropical", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tropical+Breeze", badge: "" },
-            { name: "Honeycomb Cheesecake", category: "Desserts", price: 180, description: "Creamy New York cheesecake topped with Ethiopian honeycomb.", tags: ["🍰 Sweet", "⭐ Best Seller"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Cheesecake", badge: "Best Seller" },
-            { name: "Baklava", category: "Desserts", price: 120, description: "Layers of flaky phyllo dough, chopped nuts, and honey syrup.", tags: ["🇹🇷 Premium", "🍯 Sweet"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Baklava", badge: "" },
-            { name: "Chocolate Lava Cake", category: "Desserts", price: 160, description: "Warm chocolate cake with a molten center, served with vanilla ice cream.", tags: ["🍫 Decadent", "⭐ Popular"], image: "https://placehold.co/600x450/2D8A4E/C9A96E?text=Lava+Cake", badge: "" }
-        ];
-
+        let allMenuItems = [];
         let currentCategory = 'all';
         let visibleCount = 9;
-        let filteredItems = [...menuItems];
+
+        // Load menu from JSON file
+        async function loadMenu() {
+            try {
+                const response = await fetch('/data/menu.json');
+                if (!response.ok) throw new Error('Menu not found');
+                const data = await response.json();
+                allMenuItems = data.menuItems;
+                renderMenu();
+                setupFilters();
+            } catch (error) {
+                console.error('Error loading menu:', error);
+                document.getElementById('menuContainer').innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px; background:#0F2D1A; border-radius:24px;">
+                    <i class="fas fa-utensils" style="font-size:3rem; color:#C9A96E; margin-bottom:1rem;"></i>
+                    <h3 style="color:#C9A96E;">Unable to load menu</h3>
+                    <p style="color:#8FA89A;">Please check that data/menu.json exists in your repository</p>
+                </div>`;
+            }
+        }
 
         function getFilteredItems() {
-            if (currentCategory === 'all') return [...menuItems];
-            return menuItems.filter(item => item.category === currentCategory);
+            if (currentCategory === 'all') return [...allMenuItems];
+            return allMenuItems.filter(item => item.category === currentCategory);
         }
 
         function renderMenu() {
-            filteredItems = getFilteredItems();
-            const visibleItems = filteredItems.slice(0, visibleCount);
+            const filtered = getFilteredItems();
+            const visibleItems = filtered.slice(0, visibleCount);
             const container = document.getElementById('menuContainer');
             
             if (visibleItems.length === 0) {
@@ -229,17 +197,19 @@
                                 <span class="menu-price">${item.price} ETB</span>
                             </div>
                             <p class="menu-description">${item.description}</p>
-                            <div class="menu-tags">${item.tags.map(tag => `<span class="menu-tag">${tag}</span>`).join('')}</div>
+                            <div class="menu-tags">
+                                ${item.tags.map(tag => `<span class="menu-tag">${tag}</span>`).join('')}
+                            </div>
                         </div>
                     </div>
                 `).join('');
             }
             
             const loadDiv = document.getElementById('loadMoreContainer');
-            if (filteredItems.length > visibleCount) {
-                loadDiv.innerHTML = `<button class="load-more-btn" onclick="loadMore()">Load More (${visibleCount}/${filteredItems.length}) <i class="fas fa-arrow-down"></i></button>`;
-            } else if (filteredItems.length > 0) {
-                loadDiv.innerHTML = `<p style="color:#8FA89A;"><i class="fas fa-check-circle" style="color:#2D8A4E;"></i> Showing all ${filteredItems.length} items</p>`;
+            if (filtered.length > visibleCount) {
+                loadDiv.innerHTML = `<button class="load-more-btn" onclick="loadMore()">Load More (${visibleCount}/${filtered.length}) <i class="fas fa-arrow-down"></i></button>`;
+            } else if (filtered.length > 0) {
+                loadDiv.innerHTML = `<p style="color:#8FA89A;"><i class="fas fa-check-circle" style="color:#2D8A4E;"></i> Showing all ${filtered.length} items</p>`;
             } else {
                 loadDiv.innerHTML = '';
             }
@@ -259,17 +229,12 @@
                     currentCategory = btn.dataset.category;
                     visibleCount = 9;
                     renderMenu();
-                    // Smooth scroll to keep menu in view
                     setTimeout(() => {
                         document.querySelector('.menu-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 50);
                 });
             });
         }
-
-        // Initialize
-        renderMenu();
-        setupFilters();
 
         // Mobile Menu
         const menuBtn = document.getElementById('menuBtn');
@@ -286,6 +251,9 @@
                 if (menuBtn) menuBtn.textContent = '☰';
             });
         });
+
+        // Load menu when page loads
+        loadMenu();
     </script>
 </body>
 </html>
