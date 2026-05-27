@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nate Café & Restaurant - Reserve Your Table in Addis Ababa</title>
+    <meta name="description" content="Contact Nate Café in Addis Ababa. Make reservations, inquire about events. Call +251 911 116 130.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-icon">☕</span><span class="logo-text">NATE</span><span class="logo-suffix">Café & Restaurant</span></div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li><li><a href="why-us.html">Why Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero"><div class="container"><h1>Contact Us</h1><p>We'd love to hear from you</p></div></section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card"><h3>📍 Location</h3><p>Addis Ababa, Ethiopia<br>Bole Road, Near Atlas</p></div>
+                    <div class="info-card"><h3>📞 Phone</h3><p>+251 911 116 130<br>+251 911 116 131 (Events)</p></div>
+                    <div class="info-card"><h3>✉️ Email</h3><p>info@natecafe.com<br>events@natecafe.com</p></div>
+                    <div class="info-card"><h3>⏰ Hours</h3><p>Monday - Thursday: 7AM - 11PM<br>Friday - Sunday: 7AM - 12AM</p></div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <h3>Send us a message</h3>
+                        <div class="form-group"><input type="text" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" placeholder="Your Email" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Phone Number (optional)"></div>
+                        <div class="form-group"><select required><option>Dining Reservation</option><option>Event Inquiry</option><option>Corporate Booking</option></select></div>
+                        <div class="form-group"><textarea rows="5" placeholder="Your Message" required></textarea></div>
+                        <button type="submit" class="btn-primary" style="width:100%">Send Message →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">[Same footer]</footer>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm')?.addEventListener('submit', function(e) { e.preventDefault(); alert('Thank you! We will respond within 24 hours.'); this.reset(); });
+    </script>
+    <style>
+        .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding: 60px 0; }
+        .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+        .info-card { padding: 1.5rem; background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .contact-form { padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 8px; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
+    </style>
+</body>
+</html>
