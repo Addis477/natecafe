@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Menu | Nate Café & Restaurant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-icon">☕</span><span class="logo-text">NATE</span><span class="logo-suffix">Café & Restaurant</span></div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li><li><a href="why-us.html">Why Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li><li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero"><div class="container"><h1>Our Menu</h1><p>150+ delicious items crafted with love</p></div></section>
+
+    <section class="full-menu" style="padding: 60px 0;">
+        <div class="container">
+            <div class="menu-filters">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Appetizers">Appetizers</button>
+                <button class="filter-btn" data-category="Main Courses">Main Courses</button>
+                <button class="filter-btn" data-category="Desserts">Desserts</button>
+                <button class="filter-btn" data-category="Coffee & Drinks">Coffee & Drinks</button>
+                <button class="filter-btn" data-category="Mocktails">Mocktails</button>
+            </div>
+            <div id="full-menu-container" class="menu-grid"><div class="loading-spinner">Loading 150+ menu items...</div></div>
+            <div id="load-more-container" class="text-center" style="margin-top: 40px;"></div>
+        </div>
+    </section>
+
+    <footer class="footer">[Same footer as index.html]</footer>
+    <script src="js/main.js"></script>
+    <script>
+        let allMenuItems = [];
+        let currentPage = 1;
+        let currentCategory = 'all';
+        const itemsPerPage = 20;
+
+        async function loadFullMenu() {
+            try {
+                const response = await fetch('/content/menu/index.json');
+                if (!response.ok) throw new Error('No menu yet');
+                allMenuItems = await response.json();
+                displayFilteredMenu();
+                setupFilters();
+            } catch (error) {
+                document.getElementById('full-menu-container').innerHTML = '<p class="text-center">Menu coming soon! <a href="/admin/">Add items</a> to get started.</p>';
+            }
+        }
+
+        function displayFilteredMenu() {
+            let filtered = currentCategory === 'all' ? allMenuItems : allMenuItems.filter(item => item.category === currentCategory);
+            const start = 0;
+            const paginated = filtered.slice(start, currentPage * itemsPerPage);
+            const container = document.getElementById('full-menu-container');
+            container.innerHTML = paginated.map(item => `
+                <div class="menu-card">
+                    ${item.image ? `<div class="menu-image"><img src="${item.image}" alt="${item.title}" loading="lazy"></div>` : ''}
+                    <div class="menu-content"><div class="menu-header"><h3>${escapeHtml(item.title)}</h3><span class="price">${item.price} ETB</span></div><p class="description">${escapeHtml(item.body || '')}</p><span class="category">${escapeHtml(item.category)}</span></div>
+                </div>
+            `).join('');
+            
+            const loadMoreBtn = document.getElementById('load-more-container');
+            if (currentPage * itemsPerPage < filtered.length) {
+                loadMoreBtn.innerHTML = '<button class="btn-primary" onclick="loadMore()">Load More (Showing ' + (currentPage * itemsPerPage) + ' of ' + filtered.length + ')</button>';
+            } else {
+                loadMoreBtn.innerHTML = filtered.length > 0 ? '<p>Showing all ' + filtered.length + ' items</p>' : '<p>No items in this category</p>';
+            }
+        }
+
+        function loadMore() { currentPage++; displayFilteredMenu(); }
+        function setupFilters() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentCategory = btn.dataset.category;
+                    currentPage = 1;
+                    displayFilteredMenu();
+                });
+            });
+        }
+        function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
+        loadFullMenu();
+    </script>
+</body>
+</html>
