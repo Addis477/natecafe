@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: "YOUR_CLOUDINARY_CLOUD_NAME"
+    api_key: "YOUR_CLOUDINARY_API_KEY"
+    default_transformations:
+      - - fetch_format: auto
+          quality: auto
+          width: 800
+          crop: limit
+
+collections:
+  - name: "menu"
+    label: "Menu Items"
+    label_singular: "Menu Item"
+    folder: "content/menu"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Dish Name", name: "title", widget: "string"}
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - {label: "Appetizers", value: "Appetizers"}
+          - {label: "Main Courses", value: "Main Courses"}
+          - {label: "Desserts", value: "Desserts"}
+          - {label: "Coffee & Drinks", value: "Coffee & Drinks"}
+          - {label: "Mocktails", value: "Mocktails"}
+      - {label: "Description", name: "body", widget: "text", required: false}
+      - {label: "Price (ETB)", name: "price", widget: "number"}
+      - label: "Dish Photo"
+        name: "image"
+        widget: "image"
+        required: false
+      - {label: "Featured Item", name: "featured", widget: "boolean", default: false}
