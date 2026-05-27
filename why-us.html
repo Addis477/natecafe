@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why Choose Us | Nate Café & Restaurant - Excellence in Dining</title>
+    <title>Why Choose Us | Nate Café & Restaurant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -12,7 +12,7 @@
         .navbar { background: rgba(10,31,18,0.97); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(45,138,78,0.3); position: fixed; top: 0; width: 100%; z-index: 1000; }
         .nav-container { max-width: 1400px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; color: #C9A96E; font-family: 'Playfair Display', serif; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .logo-icon { font-size: 2rem; }
+        .logo-img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #C9A96E; }
         .nav-menu { display: flex; list-style: none; gap: 2rem; align-items: center; }
         .nav-menu a { text-decoration: none; font-weight: 500; color: #B8D4C2; transition: 0.3s; position: relative; }
         .nav-menu a::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2px; background: #C9A96E; transition: 0.3s; }
@@ -20,33 +20,25 @@
         .nav-menu a:hover, .nav-menu a.active { color: #C9A96E; }
         .nav-cta { background: #2D8A4E; color: #fff !important; padding: 10px 22px !important; border-radius: 50px !important; }
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.8rem; color: #C9A96E; cursor: pointer; }
-        .page-hero { position: relative; background: linear-gradient(135deg, #0A1F12 0%, #0F2D1A 100%); min-height: 40vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; margin-top: 70px; }
-        .hero-bg-pattern { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.05; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A96E' fill-opacity='0.5'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+        .page-hero { position: relative; background: linear-gradient(0deg, rgba(10,31,18,0.7) 0%, rgba(10,31,18,0.5) 100%), url('https://raw.githubusercontent.com/Addis477/natecafe/main/why-us.jpg') center/cover no-repeat; min-height: 45vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; margin-top: 70px; }
         .page-hero-content { position: relative; z-index: 2; padding: 100px 24px 80px; }
         .hero-badge { display: inline-block; background: #2D8A4E; color: white; padding: 6px 18px; border-radius: 50px; font-size: 0.7rem; letter-spacing: 3px; margin-bottom: 20px; }
         .page-hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: #C9A96E; margin-bottom: 1rem; }
         .page-hero p { color: #B8D4C2; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
         .container { max-width: 1300px; margin: 0 auto; padding: 0 2rem; }
         .why-section { padding: 80px 0; }
-        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4rem; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         .why-card { background: #0F2D1A; border-radius: 24px; padding: 2rem; text-align: center; border: 1px solid rgba(45,138,78,0.2); transition: 0.3s; }
         .why-card:hover { border-color: #C9A96E; transform: translateY(-10px); }
-        .why-icon { font-size: 3rem; color: #C9A96E; margin-bottom: 1.2rem; }
+        .why-icon { font-size: 3rem; color: #C9A96E; margin-bottom: 1rem; }
         .why-card h3 { font-size: 1.3rem; margin-bottom: 1rem; color: #fff; }
         .why-card p { color: #8FA89A; line-height: 1.6; }
-        .comparison-table { background: #0F2D1A; border-radius: 24px; padding: 2rem; border: 1px solid rgba(45,138,78,0.2); overflow-x: auto; }
-        .comparison-table h3 { color: #C9A96E; margin-bottom: 1.5rem; font-size: 1.3rem; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid rgba(45,138,78,0.3); }
-        th { color: #C9A96E; font-weight: 600; }
-        td { color: #B8D4C2; }
-        .check { color: #2D8A4E; font-size: 1.2rem; }
-        .footer { background: #051A0D; padding: 3rem 2rem 2rem; border-top: 1px solid rgba(45,138,78,0.2); margin-top: 80px; }
+        .footer { background: #051A0D; padding: 3rem 2rem 2rem; margin-top: 80px; }
         .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; max-width: 1300px; margin: 0 auto; }
-        .footer-col h4 { color: #fff; margin-bottom: 1rem; font-family: 'Playfair Display', serif; }
-        .footer-col p, .footer-col a { color: #8FA89A; font-size: 0.85rem; text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .footer-col h4 { color: #fff; margin-bottom: 1rem; }
+        .footer-col p, .footer-col a { color: #8FA89A; font-size: 0.85rem; text-decoration: none; display: block; }
         .footer-col a:hover { color: #C9A96E; }
-        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(45,138,78,0.2); font-size: 0.8rem; color: #8FA89A; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid rgba(45,138,78,0.2); }
         @media (max-width: 1024px) { .why-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (max-width: 768px) {
             .mobile-menu-btn { display: block; }
@@ -55,7 +47,6 @@
             .why-grid { grid-template-columns: 1fr; }
             .page-hero h1 { font-size: 2.5rem; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
-            th, td { padding: 0.5rem; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -63,83 +54,34 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo"><span class="logo-icon">☕</span> NATE <span class="logo-suffix">Café & Restaurant</span></a>
+            <a href="index.html" class="logo"><img src="https://raw.githubusercontent.com/Addis477/natecafe/main/logo.jpg" alt="Logo" class="logo-img"> NATE <span class="logo-suffix">Café & Restaurant</span></a>
             <button class="mobile-menu-btn" id="menuBtn">☰</button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="why-us.html" class="active">Why Us</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="reservation.html" class="nav-cta">Reserve</a></li>
+                <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li><li><a href="why-us.html" class="active">Why Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li><li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li><li><a href="reservation.html" class="nav-cta">Reserve</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="hero-bg-pattern"></div>
-        <div class="page-hero-content">
-            <div class="hero-badge">✦ Why Nate ✦</div>
-            <h1>Why Choose Us</h1>
-            <p>Excellence in every detail, from farm to table</p>
-        </div>
-    </section>
+    <section class="page-hero"><div class="page-hero-content"><div class="hero-badge">✦ Why Nate ✦</div><h1>Why Choose Us</h1><p>Excellence in every detail, from farm to table</p></div></section>
 
-    <section class="why-section">
-        <div class="container">
-            <div class="why-grid">
-                <div class="why-card"><div class="why-icon"><i class="fas fa-leaf"></i></div><h3>Fresh Ingredients Daily</h3><p>We partner with local farmers to bring you the freshest produce, meats, and dairy. Everything is prepared fresh, never frozen.</p></div>
-                <div class="why-card"><div class="why-icon"><i class="fas fa-medal"></i></div><h3>Award-Winning Chefs</h3><p>Our culinary team brings decades of experience from top restaurants worldwide, creating innovative dishes.</p></div>
-                <div class="why-card"><div class="why-icon"><i class="fas fa-wine-glass-alt"></i></div><h3>Premium Ambiance</h3><p>Elegant yet welcoming atmosphere perfect for any occasion - from casual lunches to romantic dinners.</p></div>
-                <div class="why-card"><div class="why-icon"><i class="fas fa-clock"></i></div><h3>Exceptional Service</h3><p>Our trained staff anticipates your needs, ensuring every visit is seamless and memorable.</p></div>
-                <div class="why-card"><div class="why-icon"><i class="fas fa-dollar-sign"></i></div><h3>Best Value</h3><p>Premium quality at accessible prices. We believe exceptional dining should be affordable.</p></div>
-                <div class="why-card"><div class="why-icon"><i class="fas fa-trophy"></i></div><h3>Award-Winning</h3><p>Recognized as one of Addis Ababa's top restaurants by leading food critics.</p></div>
-            </div>
-            
-            <div class="comparison-table">
-                <h3><i class="fas fa-chart-line"></i> The Nate Difference</h3>
-                <table>
-                    <thead><tr><th>Feature</th><th>Nate Café</th><th>Others</th></tr></thead>
-                    <tbody>
-                        <tr><td>Fresh Ingredients</td><td class="check">✓ Daily local sourcing</td><td>❌ Often frozen</td></tr>
-                        <tr><td>Expert Chefs</td><td class="check">✓ International training</td><td>❌ Limited experience</td></tr>
-                        <tr><td>Ethiopian Coffee</td><td class="check">✓ Premium single-origin</td><td>❌ Commercial blends</td></tr>
-                        <tr><td>Ambiance</td><td class="check">✓ Modern & elegant</td><td>❌ Basic decor</td></tr>
-                        <tr><td>Service Rating</td><td class="check">✓ 4.9/5</td><td>❌ 3.5/5 average</td></tr>
-                        <tr><td>Value for Money</td><td class="check">✓ Excellent</td><td>❌ Inconsistent</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+    <section class="why-section"><div class="container"><div class="why-grid">
+        <div class="why-card"><div class="why-icon"><i class="fas fa-leaf"></i></div><h3>Fresh Ingredients Daily</h3><p>We partner with local farmers for the freshest produce.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-medal"></i></div><h3>Award-Winning Chefs</h3><p>Decades of experience from top restaurants worldwide.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-wine-glass-alt"></i></div><h3>Premium Ambiance</h3><p>Elegant atmosphere for any occasion.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-clock"></i></div><h3>Exceptional Service</h3><p>Our trained staff ensures every visit is memorable.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-dollar-sign"></i></div><h3>Best Value</h3><p>Premium quality at accessible prices.</p></div>
+        <div class="why-card"><div class="why-icon"><i class="fas fa-trophy"></i></div><h3>Award-Winning</h3><p>Recognized as Addis Ababa's top restaurant.</p></div>
+    </div></div></section>
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-col"><h4>NATE</h4><p>Café & Restaurant</p><p>Premium dining in Addis Ababa</p></div>
-            <div class="footer-col"><h4>Hours</h4><p>Mon-Thu: 7AM-11PM</p><p>Fri-Sun: 7AM-12AM</p></div>
-            <div class="footer-col"><h4>Contact</h4><p>📍 Addis Ababa, Ethiopia</p><p>📞 +251 911 116 130</p></div>
-            <div class="footer-col"><h4>Follow</h4><a href="#"><i class="fab fa-instagram"></i> Instagram</a><a href="#"><i class="fab fa-facebook"></i> Facebook</a></div>
-        </div>
-        <div class="footer-bottom"><p>&copy; 2025 Nate Café & Restaurant. All rights reserved.</p></div>
-    </footer>
+    <footer class="footer"><div class="footer-grid"><div class="footer-col"><h4>NATE</h4><p>Café & Restaurant</p></div><div class="footer-col"><h4>Hours</h4><p>7AM-11PM Daily</p></div><div class="footer-col"><h4>Contact</h4><p>📍 Addis Ababa</p><p>📞 +251 911 116 130</p></div><div class="footer-col"><h4>Follow</h4><a href="#">Instagram</a><a href="#">Facebook</a></div></div><div class="footer-bottom"><p>&copy; 2025 Nate Café</p></div></footer>
 
     <script>
-        const menuBtn = document.getElementById('menuBtn');
-        const navMenu = document.getElementById('navMenu');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
-            });
-        }
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                if (menuBtn) menuBtn.textContent = '☰';
-            });
-        });
+        const menuBtn = document.getElementById('menuBtn'), navMenu = document.getElementById('navMenu');
+        if (menuBtn) menuBtn.addEventListener('click', () => { navMenu.classList.toggle('active'); menuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰'; });
+        document.querySelectorAll('.nav-menu a').forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); if (menuBtn) menuBtn.textContent = '☰'; }); });
     </script>
 </body>
 </html>
