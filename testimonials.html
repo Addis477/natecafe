@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Nate Café & Restaurant - What Our Customers Say</title>
+    <meta name="description" content="Read real reviews from happy customers at Nate Café & Restaurant in Addis Ababa.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><span class="logo-icon">☕</span><span class="logo-text">NATE</span><span class="logo-suffix">Café & Restaurant</span></div>
+            <button class="mobile-menu-btn">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li><li><a href="why-us.html">Why Us</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero"><div class="container"><h1>Customer Testimonials</h1><p>What our guests say about their Nate experience</p></div></section>
+
+    <section class="testimonials-grid-section">
+        <div class="container">
+            <div id="testimonials-container" class="testimonials-grid">
+                <div class="loading-spinner">Loading customer reviews...</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info"><h3>NATE</h3><p>Café & Restaurant</p></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><p>Open Daily: 7:00 AM - 11:00 PM</p></div>
+                <div class="footer-contact"><h4>Contact</h4><p>📍 Addis Ababa, Ethiopia</p><p>📞 +251 911 116 130</p></div>
+                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="#">Instagram</a><a href="#">Facebook</a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Nate Café & Restaurant</p></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; padding: 60px 0; }
+        .testimonial-card { padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .testimonial-rating { color: #d4a373; font-size: 1.2rem; margin-bottom: 1rem; }
+        .testimonial-text { font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .author-initial { width: 50px; height: 50px; border-radius: 50%; background: #0a2f1f; color: white; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; }
+    </style>
+    <script>
+        const sampleTestimonials = [
+            { name: "Sarah Johnson", rating: 5, review: "The best coffee in Addis! The atmosphere is amazing and the staff is so welcoming." },
+            { name: "Michael T.", rating: 5, review: "Incredible Ethiopian cuisine. The tibs were perfectly cooked and the service was outstanding." },
+            { name: "Elena K.", rating: 4, review: "Beautiful restaurant with delicious food. Highly recommend the signature mocktails!" },
+            { name: "David M.", rating: 5, review: "Nate Cafe is my go-to spot for business lunches. Professional service every time." },
+            { name: "Rachel G.", rating: 5, review: "The coffee ceremony is a must-try! Authentic experience with amazing flavors." }
+        ];
+        function loadTestimonials() {
+            const container = document.getElementById('testimonials-container');
+            container.innerHTML = sampleTestimonials.map(t => `
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">${'★'.repeat(t.rating)}${'☆'.repeat(5-t.rating)}</div>
+                    <p class="testimonial-text">"${t.review}"</p>
+                    <div class="testimonial-author"><div class="author-initial">${t.name.charAt(0)}</div><div><strong>${t.name}</strong></div></div>
+                </div>
+            `).join('');
+        }
+        loadTestimonials();
+    </script>
+</body>
+</html>
