@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nate Café & Restaurant - Our Story in Addis Ababa</title>
+    <meta name="description" content="Discover the story behind Nate Café & Restaurant in Addis Ababa. Premium dining with Ethiopian hospitality since 2010.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">NATE</span>
+                <span class="logo-suffix">Café & Restaurant</span>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Story</h1>
+            <p>Premium dining in Addis Ababa since 2010</p>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <span class="section-badge">Our Journey</span>
+                    <h2>From Passion to Plate</h2>
+                    <p>Nate Café & Restaurant was born from a simple idea: bring together the finest Ethiopian ingredients with international culinary techniques. What started as a small coffee shop has grown into Addis Ababa's premier dining destination.</p>
+                    <p>Today, we're proud to serve our community with authentic flavors, warm hospitality, and unforgettable experiences. Every dish tells a story of tradition, innovation, and love for great food.</p>
+                    <div class="story-stats">
+                        <div class="stat-item"><span class="stat-number">15+</span><span class="stat-label">Years</span></div>
+                        <div class="stat-item"><span class="stat-number">50+</span><span class="stat-label">Team Members</span></div>
+                        <div class="stat-item"><span class="stat-number">150+</span><span class="stat-label">Menu Items</span></div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <div class="image-frame">
+                        <img src="https://placehold.co/600x400/1a4a2a/ffffff?text=Nate+Cafe+Interior" alt="Nate Café Interior" loading="lazy" style="width:100%; border-radius:20px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Core Values</span>
+                <h2>What Drives Us</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon">🌟</div><h3>Quality First</h3><p>We source the freshest local ingredients and never compromise on taste.</p></div>
+                <div class="value-card"><div class="value-icon">🤝</div><h3>Ethiopian Hospitality</h3><p>Every guest is family. Warmth and welcome in every interaction.</p></div>
+                <div class="value-card"><div class="value-icon">🌱</div><h3>Sustainability</h3><p>Eco-friendly practices from farm to table.</p></div>
+                <div class="value-card"><div class="value-icon">🎨</div><h3>Innovation</h3><p>Constantly evolving our menu with creative new dishes.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info"><h3>NATE</h3><p>Café & Restaurant</p><p>Where every meal is a celebration of flavor.</p></div>
+                <div class="footer-hours"><h4>Opening Hours</h4><p>Open Daily: 7:00 AM - 11:00 PM</p><p>Friday & Saturday: Until 12:00 AM</p></div>
+                <div class="footer-contact"><h4>Contact</h4><p>📍 Addis Ababa, Ethiopia</p><p>📞 +251 911 116 130</p><p>✉️ info@natecafe.com</p></div>
+                <div class="footer-social"><h4>Follow Us</h4><div class="social-links"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">Telegram</a></div></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 Nate Café & Restaurant. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <style>
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; padding: 60px 0; }
+        .story-stats { display: flex; gap: 2rem; margin-top: 2rem; }
+        .stat-item { text-align: center; }
+        .stat-item .stat-number { font-size: 2rem; font-weight: bold; color: var(--accent-gold); display: block; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 60px 0; }
+        .value-card { text-align: center; padding: 2rem; background: white; border-radius: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .value-icon { font-size: 3rem; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; gap: 2rem; } .story-stats { justify-content: center; } }
+    </style>
+</body>
+</html>
