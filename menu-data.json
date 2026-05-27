@@ -1,0 +1,20 @@
+{
+  "menuItems": [
+    {
+      "name": "Ethiopian Special Tibs",
+      "category": "Ethiopian Specials",
+      "price": 350,
+      "description": "Sizzling tender meat chunks sautéed with berbere sauce, onions, and fresh rosemary.",
+      "tags": ["🔥 Spicy", "⭐ Traditional"],
+      "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Tibs"
+    },
+    {
+      "name": "Doro Wat",
+      "category": "Ethiopian Specials",
+      "price": 320,
+      "description": "Traditional spicy chicken stew with hard-boiled egg.",
+      "tags": ["🔥 Spicy", "⭐ Famous"],
+      "image": "https://placehold.co/600x450/2D8A4E/C9A96E?text=Doro+Wat"
+    }
+  ]
+}
